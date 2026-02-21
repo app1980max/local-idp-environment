@@ -38,10 +38,5 @@ module "minio" {
   depends_on = [module.argo]
 }
 
-module "velero" {
-  source = "./modules/velero"
-  depends_on = [module.minio]
-}
-
 
 
