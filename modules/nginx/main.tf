@@ -12,7 +12,6 @@ resource "helm_release" "ingress_nginx" {
   values = [
     <<EOT
 controller:
-  replicaCount: 2
   updateStrategy:
     type: "RollingUpdate"
     rollingUpdate:
