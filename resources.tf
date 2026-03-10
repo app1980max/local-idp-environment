@@ -45,7 +45,7 @@ module "vcluster-platform" {
 
 module "vclusters" {
   source = "./modules/vclusters"
-  depends_on = [vcluster-platform]
+  depends_on = [module.vcluster-platform]
   for_each = {
     dev  = "dev"
     qa   = "qa"
