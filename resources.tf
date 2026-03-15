@@ -43,15 +43,3 @@ module "vcluster-platform" {
   depends_on = [module.minio]
 }
 
-module "vclusters" {
-  source = "./modules/vclusters"
-  depends_on = [module.vcluster-platform]
-  for_each = {
-    dev  = "dev"
-    qa   = "qa"
-  }
-
-  name      = "vcluster-${each.key}"
-  namespace = "vcluster-${each.key}"
-
-}
